@@ -70,7 +70,8 @@ nav{position:sticky;top:0;z-index:40;background:rgba(11,14,19,.65);backdrop-filt
 .hero .badge{border-color:#3a2}
 .cta-bar{position:fixed;right:18px;bottom:18px;display:flex;gap:10px;z-index:50}
 a.btn:hover{box-shadow:var(--ring)}
-.logoSvg{width:148px;height:auto}
+/* imagem PNG da logo */
+.logoImg{height:52px; width:auto; display:block}
 @media (max-width: 980px){
   .hero-in{grid-template-columns:1fr}
   .kpis{grid-template-columns:1fr 1fr}
@@ -100,29 +101,8 @@ a.btn:hover{box-shadow:var(--ring)}
 <nav>
   <div class="container navbar">
     <div class="brand">
-      <!-- LOGO SVG DOURADA, SEM FUNDO -->
-      <svg class="logoSvg" viewBox="0 0 740 220" xmlns="http://www.w3.org/2000/svg" aria-label="Delivery PRO logo">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#f5c542"/><stop offset="1" stop-color="#ffd873"/>
-          </linearGradient>
-        </defs>
-        <!-- scooter -->
-        <g fill="url(#g)">
-          <path d="M140 95h-32c-7 0-11 6-11 12 0 7 5 12 11 12h18l-8 22h-18c-10 0-18 8-18 18s8 18 18 18h24c13 0 25-8 29-20l12-38h31c5 0 9 4 9 9v22c0 3 3 6 6 6h24c3 0 6-3 6-6v-26c0-19-15-34-34-35l-13-35c-4-10-14-17-24-17h-21c-7 0-12 6-12 12s5 12 12 12h19l10 26z"/>
-          <circle cx="134" cy="187" r="22"/>
-          <circle cx="294" cy="187" r="22"/>
-          <rect x="60" y="136" width="28" height="10" rx="5"/>
-          <rect x="60" y="152" width="34" height="10" rx="5"/>
-          <rect x="60" y="168" width="28" height="10" rx="5"/>
-        </g>
-        <!-- texto -->
-        <g transform="translate(340,26)" fill="url(#g)">
-          <path d="M0 0h0"/>
-          <text x="0" y="90" font-family="Georgia,serif" font-size="86" font-weight="700">Delivery</text>
-          <text x="0" y="170" font-family="Georgia,serif" font-size="84" font-weight="700">PRO</text>
-        </g>
-      </svg>
+      <!-- AQUI VAI A SUA LOGO .PNG NA MESMA PASTA -->
+      <img class="logoImg" src="img/logo.png" alt="Delivery PRO — logo" width="260" height="92" loading="eager" decoding="async">
       <div style="display:none"><b>Delivery PRO</b></div>
     </div>
 
@@ -131,7 +111,7 @@ a.btn:hover{box-shadow:var(--ring)}
       <a class="btn dark" href="#pricing" data-i18n="nav_pricing">Preços</a>
       <a class="btn gold" id="ctaTop" href="https://wa.me/447494204460?text=Quero%20um%20site%20de%20delivery%20sem%20comiss%C3%A3o" data-i18n="nav_whats">Falar no WhatsApp</a>
 
-      <!-- BANDEIRAS / IDIOMAS -->
+      <!-- Idiomas -->
       <div class="langs" aria-label="Language">
         <button class="flag active" data-lang="en">
           <img alt="EN" src="https://flagcdn.com/gb.svg"> EN
@@ -327,13 +307,11 @@ a.btn:hover{box-shadow:var(--ring)}
 </footer>
 
 <script>
-/* ===== YEAR ===== */
 document.getElementById('y').textContent = new Date().getFullYear();
 
 /* ===== I18N ===== */
 const I18N = {
-  en:{
-    meta_title:"Delivery PRO — Commission-free Delivery Website | Menu + WhatsApp",
+  en:{meta_title:"Delivery PRO — Commission-free Delivery Website | Menu + WhatsApp",
     nav_features:"Features", nav_pricing:"Pricing", nav_whats:"Chat on WhatsApp",
     hero_badge:"NO COMMISSION • MENU + CART + WHATSAPP",
     hero_title:"Sell direct — <span style='color:var(--gold)'>stop paying 30% to apps</span>",
@@ -370,8 +348,7 @@ const I18N = {
     contact_title:"Contact us", contact_whats:"WhatsApp now", contact_email:"Send by email",
     langs_note:"We serve EN / PT / ES / HI.", foot_claim:"No commission • Menu + WhatsApp", foot_note:"Images are illustrative."
   },
-  pt:{
-    meta_title:"Delivery PRO — Website de Delivery sem Comissão | Cardápio + WhatsApp",
+  pt:{meta_title:"Delivery PRO — Website de Delivery sem Comissão | Cardápio + WhatsApp",
     nav_features:"Recursos", nav_pricing:"Preços", nav_whats:"Falar no WhatsApp",
     hero_badge:"SEM COMISSÃO • CARDÁPIO + CARRINHO + WHATSAPP",
     hero_title:"Seu restaurante vendendo direto — <span style='color:var(--gold)'>sem pagar 30% de apps</span>",
@@ -408,8 +385,7 @@ const I18N = {
     contact_title:"Fale com a gente", contact_whats:"WhatsApp agora", contact_email:"Enviar por e-mail",
     langs_note:"Atendemos em EN / PT / ES / HI.", foot_claim:"Sem comissão • Cardápio + WhatsApp", foot_note:"Imagens ilustrativas."
   },
-  es:{
-    meta_title:"Delivery PRO — Sitio de delivery sin comisión | Menú + WhatsApp",
+  es:{meta_title:"Delivery PRO — Sitio de delivery sin comisión | Menú + WhatsApp",
     nav_features:"Funciones", nav_pricing:"Precios", nav_whats:"Hablar por WhatsApp",
     hero_badge:"SIN COMISIÓN • MENÚ + CARRITO + WHATSAPP",
     hero_title:"Vende directo — <span style='color:var(--gold)'>sin pagar 30% a apps</span>",
@@ -440,14 +416,13 @@ const I18N = {
     test_title:"Testimonios", t1:"“Ahorro mayor que el costo del sitio en el primer mes.”", t2:"“Nuestro PDF se volvió sitio. El cupón BLACK10 subió el ticket.”", t3:"“Tarifa por código postal nos salvó.”",
     faq_title:"Preguntas frecuentes", faq1_q:"¿Cómo recibo los pedidos?", faq1_a:"El cliente arma el carrito y finaliza por WhatsApp/correo.",
     faq2_q:"¿Hay pago online?", faq2_a:"PRO prioriza WhatsApp. Pagos online en GOLD.",
-    faq3_q:"¿Cómo se calcula la entrega?", faq3_a:"Ingresan el código postal; usamos postcodes.io y la fórmula de Haversine.",
+    faq3_q:"¿Cómo se calcula la entrega?", faq3_a:"Usamos postcodes.io y Haversine para la distancia × tarifa/km.",
     faq4_q:"¿Puedo usar mi dominio?", faq4_a:"Sí. Configuramos DNS/SSL.",
     faq5_q:"¿Cuánto tarda?", faq5_a:"24–72h tras recibir tu menú.",
     contact_title:"Contáctanos", contact_whats:"WhatsApp ahora", contact_email:"Enviar por correo",
     langs_note:"Atendemos EN / PT / ES / HI.", foot_claim:"Sin comisión • Menú + WhatsApp", foot_note:"Imágenes ilustrativas."
   },
-  hi:{
-    meta_title:"Delivery PRO — कमीशन-फ्री डिलीवरी वेबसाइट | मेन्यू + WhatsApp",
+  hi:{meta_title:"Delivery PRO — कमीशन-फ्री डिलीवरी वेबसाइट | मेन्यू + WhatsApp",
     nav_features:"फ़ीचर्स", nav_pricing:"कीमत", nav_whats:"WhatsApp पर बात करें",
     hero_badge:"बिना कमीशन • मेन्यू + कार्ट + WhatsApp",
     hero_title:"सीधे बेचें — <span style='color:var(--gold)'>ऐप्स को 30% देना बंद</span>",
@@ -460,7 +435,7 @@ const I18N = {
     f3_title:"किमी के हिसाब से डिलीवरी", f3_desc:"पोस्टकोड डालें; शुल्क ऑटो-कैल्क्युलेट।", f3_b1:"postcodes.io + Haversine पर आधारित।",
     f4_title:"बिकाऊ मेन्यू", f4_desc:"फ्रेंचाइज़-स्टाइल डिज़ाइन, बड़ी फ़ोटो, साइज, अपसेल, कूपन, थीम्स।",
     f5_title:"मल्टीलैंग्वेज", f5_desc:"EN / PT / ES / HI — ब्रिटिश, ब्राज़ीलियाई, लैटिन और भारतीय दर्शकों के लिए।",
-    f6_title:"तेज़ और SEO", f6_desc:"हल्का पेज, फटाफट लोड, सोशल मेटाडेटा।",
+    f6_title:"तेज़ और SEO", f6_desc:"हल्का पेज, फटाफट लोड, सोशल מेटाडेटा।",
     cmp_title:"ईमानदार तुलना", cmp_apps:"डिलीवरी ऐप्स", cmp_us:"Delivery PRO (आपकी साइट)",
     cmp_fee:"प्रति ऑर्डर शुल्क", cmp_price:"कीमत नियंत्रण", cmp_limit:"सीमित", cmp_full:"पूर्ण", cmp_owner:"कस्टमर का मालिक", cmp_you:"आप",
     cmp_wa:"WhatsApp चेकआउट", no:"नहीं", yes:"हाँ", cmp_time:"लॉन्च समय", days:"दिन", hours:"घंटे",
@@ -478,7 +453,7 @@ const I18N = {
     test_title:"ग्राहक क्या कहते हैं", t1:"“पहले महीने में ही साइट की क़ीमत वसूल।”", t2:"“PDF से असली साइट बनी। BLACK10 ने औसत बिल बढ़ाया।”", t3:"“पोस्टकोड शुल्क से डिलीवरी आसान हुई।”",
     faq_title:"अक्सर पूछे जाने वाले प्रश्न", faq1_q:"ऑर्डर कैसे मिलेंगे?", faq1_a:"ग्राहक कार्ट बनाता है और WhatsApp/ईमेल पर पूरा करता है। आप कन्फर्म करते हैं।",
     faq2_q:"ऑनलाइन पेमेंट है?", faq2_a:"PRO व्हाट्सएप को तरजीह देता है; GOLD में पेमेंट जोड़ सकते हैं।",
-    faq3_q:"डिलीवरी शुल्क कैसे?", faq3_a:"पोस्टकोड से lat/long लेकर (postcodes.io) Haversine दूरी × दर।",
+    faq3_q:"डिलीवरी शुल्क कैसे?", faq3_a:"postcodes.io से lat/long लेकर Haversine दूरी × दर।",
     faq4_q:"अपना डोमेन?", faq4_a:"हाँ, हम DNS/SSL सेट करते हैं।",
     faq5_q:"कितना समय?", faq5_a:"आमतौर पर 24–72 घंटे।",
     contact_title:"संपर्क करें", contact_whats:"अभी WhatsApp", contact_email:"ई-मेल भेजें",
@@ -487,7 +462,6 @@ const I18N = {
 };
 
 let LANG = localStorage.getItem('lang') || 'en';
-
 function applyLang(){
   const dict = I18N[LANG] || I18N.en;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
