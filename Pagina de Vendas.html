@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Delivery PRO — Website de Delivery sem Comissão | Cardápio + WhatsApp</title>
+
+<meta name="description" content="Venda direto ao cliente com um site de delivery próprio: cardápio bonito, carrinho, cálculo de entrega por km e pedidos no WhatsApp. Sem comissão de apps.">
+<meta property="og:title" content="Delivery PRO — Website de Delivery sem Comissão">
+<meta property="og:description" content="Cardápio + carrinho + WhatsApp + cálculo de entrega. Sem comissão.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1593504049359-74330189a345?q=80&w=1200&auto=format&fit=crop"/>
+<meta name="theme-color" content="#111827">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0e13; --card:#0f131a; --ink:#eaf1ff; --muted:#9fb0c6;
+  --gold:#f5c542; --red:#e11d48; --green:#22c55e; --ring:0 0 0 3px rgba(245,197,66,.35);
+  --border:#1f2631; --radius:18px; --max:1160px;
+}
+*{box-sizing:border-box} html,body{margin:0;height:100%}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1600px 500px at 10% -10%, rgba(245,197,66,.08), transparent 60%), radial-gradient(1200px 400px at 90% -10%, rgba(225,29,72,.10), transparent 60%), #0b0e13;color:var(--ink)}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:24px}
+.section{padding:24px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid var(--border);font-weight:800;cursor:pointer}
+.btn.gold{background:linear-gradient(90deg,#f5c542,#ffd873); color:#111}
+.btn.dark{background:#111827;color:#eaf1ff;border-color:#1f2631}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#0f131a;color:var(--muted);font-weight:700}
+.grid{display:grid;gap:18px}
+h1{font-size:clamp(28px,4.2vw,50px);margin:8px 0 6px}
+h2{font-size:clamp(22px,3vw,34px);margin:0 0 8px}
+h3{margin:0 0 6px}
+p{color:var(--muted);margin:6px 0 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px}
+.hero{
+  margin-top:18px;border-radius:24px;overflow:hidden;border:1px solid var(--border);
+  background:
+    radial-gradient(1200px 280px at 10% -50%, rgba(245,197,66,.20), transparent 60%),
+    radial-gradient(900px 220px at 90% -40%, rgba(225,29,72,.18), transparent 60%),
+    linear-gradient(135deg,#0f131a,#0b0e13);
+}
+.hero-in{display:grid;gap:22px;grid-template-columns:1.05fr .95fr;align-items:center}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.kpi{background:#0c1016;border:1px solid var(--border);border-radius:14px;padding:12px;text-align:center}
+.kpi strong{font-size:20px}
+.mock{aspect-ratio:16/10;border-radius:18px;background:#111 url('https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;border:1px solid var(--border)}
+.list{display:grid;gap:10px}
+.li{display:flex;gap:10px}
+.li i{width:26px;height:26px;border-radius:999px;display:grid;place-items:center;background:#0c1016;border:1px solid var(--border)}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price .h{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.price .num{font-weight:800;font-size:28px}
+.table{width:100%;border-collapse:collapse}
+.table td,.table th{border:1px solid var(--border);padding:10px}
+.table th{background:#0c1016}
+.faq{display:grid;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px}
+footer{color:var(--muted);text-align:center;margin:40px 0 20px}
+nav{position:sticky;top:0;z-index:40;background:rgba(11,14,19,.65);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:12px;background:
+ radial-gradient(circle at 40% 35%, #ffd873 0 35%, transparent 36%),
+ radial-gradient(circle at 65% 65%, #f5c542 0 35%, transparent 36%),
+ linear-gradient(135deg,#111,#151a21);border:2px solid #ffd873}
+.brand b{font-size:18px}
+.hero .badge{border-color:#3a2}
+.cta-bar{position:fixed;right:18px;bottom:18px;display:flex;gap:10px;z-index:50}
+a.btn:hover{box-shadow:var(--ring)}
+hr.sep{border:0;border-top:1px solid var(--border);margin:24px 0}
+@media (max-width: 980px){
+  .hero-in{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .pricing{grid-template-columns:1fr}
+}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Product",
+ "name":"Delivery PRO — Website de Delivery sem Comissão",
+ "description":"Cardápio com carrinho, cálculo de entrega por km e pedidos no WhatsApp.",
+ "brand":{"@type":"Brand","name":"Matrix Tools"},
+ "offers":{
+   "@type":"Offer",
+   "priceCurrency":"GBP",
+   "price":"499.00",
+   "url":"https://example.com/",
+   "availability":"https://schema.org/InStock"
+ }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="container navbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div><b>Delivery PRO</b><div style="color:var(--muted);font-size:12px">Seu delivery, suas regras</div></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn dark" href="#features">Recursos</a>
+      <a class="btn dark" href="#pricing">Preços</a>
+      <a class="btn gold" id="ctaTop" href="https://wa.me/447494204460?text=Quero%20um%20site%20de%20delivery%20sem%20comiss%C3%A3o">Falar no WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container section hero">
+  <div class="hero-in">
+    <div>
+      <span class="badge">SEM COMISSÃO • CARDÁPIO + CARRINHO + WHATSAPP</span>
+      <h1>Seu restaurante vendendo direto — <span style="color:var(--gold)">sem pagar 30% de apps</span></h1>
+      <p>Site de delivery próprio com cardápio bonito, carrinho, cupom, cálculo de entrega por km e pedido final no WhatsApp ou e-mail. Velocidade de app, custo de site.</p>
+      <div class="hero-cta">
+        <a class="btn gold" href="#pricing">Ver planos</a>
+        <a class="btn dark" href="#demo">Ver demo ao vivo</a>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><strong>0%</strong><div style="color:var(--muted)">comissão</div></div>
+        <div class="kpi"><strong>5 min</strong><div style="color:var(--muted)">para receber pedidos</div></div>
+        <div class="kpi"><strong>+28%</strong><div style="color:var(--muted)">ticket médio (cupom)</div></div>
+      </div>
+    </div>
+    <div class="mock" role="img" aria-label="Mockup do site de delivery"></div>
+  </div>
+</header>
+
+<main>
+  <section id="features" class="container section">
+    <h2>Por que restaurantes escolhem o Delivery PRO</h2>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card">
+        <h3>Sem comissão</h3>
+        <p>Acabe com taxas de 25–35% dos apps. O pedido vai direto para você.</p>
+        <div class="list" style="margin-top:10px">
+          <div class="li"><i>💸</i><div>Economia real a cada pedido.</div></div>
+          <div class="li"><i>🧾</i><div>Controle de preço, cupom e combos.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Pedido no WhatsApp</h3>
+        <p>Fluxo natural: cliente escolhe itens, preenche dados e finaliza pelo WhatsApp.</p>
+        <div class="li"><i>⚡</i><div>Zero atrito. Sem criar conta.</div></div>
+      </div>
+      <div class="card">
+        <h3>Cálculo de entrega por km</h3>
+        <p>Digite o postcode: o sistema calcula a taxa automaticamente.</p>
+        <div class="li"><i>🗺️</i><div>Baseado em <b>postcodes.io</b> + Haversine.</div></div>
+      </div>
+
+      <div class="card">
+        <h3>Cardápio que vende</h3>
+        <p>Design tipo franquia, fotos grandes, tamanhos, upsell, cupons e temas claro/escuro.</p>
+      </div>
+      <div class="card">
+        <h3>Multi-idioma</h3>
+        <p>EN / AR prontos. Ideal para públicos turco, árabe, indiano e brasileiro.</p>
+      </div>
+      <div class="card">
+        <h3>Rápido e SEO</h3>
+        <p>Página leve, carregamento instantâneo e metadata pronta para redes sociais.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare" class="container section card">
+    <h2>Comparativo honesto</h2>
+    <table class="table" aria-label="Comparativo com apps">
+      <tr><th></th><th>Apps de entrega</th><th>Delivery PRO (seu site)</th></tr>
+      <tr><td>Taxa por pedido</td><td>25%–35%</td><td><b>0%</b></td></tr>
+      <tr><td>Controle de preço</td><td>Limitado</td><td>Total</td></tr>
+      <tr><td>Dono dos clientes</td><td>App</td><td><b>Você</b></td></tr>
+      <tr><td>Pedido via WhatsApp</td><td>Não</td><td><b>Sim</b></td></tr>
+      <tr><td>Pra ficar pronto</td><td>Dias</td><td><b>Horas</b></td></tr>
+    </table>
+  </section>
+
+  <section id="demo" class="container section">
+    <h2>Veja o demo funcionando</h2>
+    <div class="card">
+      <p>Abra o menu, adicione itens, calcule entrega pelo CEP e finalize no WhatsApp.</p>
+      <div class="hero-cta" style="margin-top:12px">
+        <a class="btn gold" href="https://gov-cyber.github.io/Tasty-Pizza-Burger/" target="_blank" rel="noopener">Abrir demo</a>
+        <a class="btn dark" href="https://wa.me/447494204460?text=Quero%20ver%20um%20demo%20personalizado" target="_blank" rel="noopener">Pedir demo com minha marca</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="container section">
+    <h2>Planos simples e diretos</h2>
+    <div class="pricing">
+      <div class="card price">
+        <div class="h"><b>Website Delivery PRO</b><span class="badge">Mais vendido</span></div>
+        <div class="num">£499 setup + £25/mês</div>
+        <p>Ideal para começar rápido, com domínio e hospedagem.</p>
+        <ul style="color:var(--muted);margin:10px 0 14px">
+          <li>Cardápio, carrinho e WhatsApp</li>
+          <li>Cálculo de entrega por km</li>
+          <li>Cupons e temas</li>
+          <li>Suporte e atualização</li>
+        </ul>
+        <a class="btn gold" href="https://wa.me/447494204460?text=Quero%20o%20Plano%20PRO">Quero este</a>
+      </div>
+
+      <div class="card price">
+        <div class="h"><b>Sem mensalidade</b></div>
+        <div class="num">£899 pagamento único</div>
+        <p>Para quem prefere pagar uma vez e usar pra sempre.</p>
+        <ul style="color:var(--muted);margin:10px 0 14px">
+          <li>Tudo do PRO</li>
+          <li>Hospedagem por conta do cliente</li>
+        </ul>
+        <a class="btn dark" href="mailto:orders@tastypizza.co.uk?subject=Plano%20One-time%20£899&body=Quero%20comprar%20o%20plano%20sem%20mensalidade.">Solicitar</a>
+      </div>
+
+      <div class="card price">
+        <div class="h"><b>Franchise GOLD</b></div>
+        <div class="num">£1,499 – £2,500</div>
+        <p>Para redes com 2+ lojas e necessidades avançadas.</p>
+        <ul style="color:var(--muted);margin:10px 0 14px">
+          <li>Multi-loja e relatórios</li>
+          <li>Integrações e personalizações</li>
+        </ul>
+        <a class="btn dark" href="https://wa.me/447494204460?text=Franchise%20GOLD%20infos">Falar com consultor</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Como funciona</h2>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card"><h3>1) Envie logo e cardápio</h3><p>Fotos, preços e tamanhos. Pode ser PDF ou fotos do menu.</p></div>
+      <div class="card"><h3>2) Personalizamos</h3><p>Cores, temas, idiomas e taxas. Tudo com sua marca.</p></div>
+      <div class="card"><h3>3) Publicamos</h3><p>Domínio configurado e site no ar.</p></div>
+      <div class="card"><h3>4) Comece a vender</h3><p>Clientes pedem, você recebe no WhatsApp. Sem comissão.</p></div>
+    </div>
+  </section>
+
+  <section class="container section card">
+    <h2>Depoimentos</h2>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card"><p>“Economizei mais que o valor do site só no primeiro mês. Vem direto no meu WhatsApp, rapidinho.”</p><b>— Dono de Kebab, N22</b></div>
+      <div class="card"><p>“Nosso PDF virou site profissional. Cupom BLACK10 aumentou o ticket.”</p><b>— Pizzaria, N8</b></div>
+      <div class="card"><p>“Calcular entrega por CEP salvou minha vida. Paramos de perder pedido por zona.”</p><b>— Chicken Shop, N17</b></div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary><b>Como recebo os pedidos?</b></summary><p>Seu cliente monta o carrinho e finaliza no WhatsApp ou e-mail. Você confirma e combina pagamento/entrega.</p></details>
+      <details><summary><b>Tem pagamento online?</b></summary><p>Versão PRO prioriza WhatsApp por conversão. Integração com pagamentos online pode ser adicionada no GOLD.</p></details>
+      <details><summary><b>Como funciona a taxa de entrega?</b></summary><p>O cliente digita o postcode; usamos <i>postcodes.io</i> para lat/long e calculamos a distância (Haversine) × valor por km.</p></details>
+      <details><summary><b>Posso usar meu domínio?</b></summary><p>Sim. Configuramos DNS/SSL para você.</p></details>
+      <details><summary><b>Em quanto tempo fica pronto?</b></summary><p>Geralmente em 24–72h após recebermos seu cardápio e imagens.</p></details>
+    </div>
+  </section>
+
+  <section class="container section card">
+    <h2>Fale com a gente</h2>
+    <div class="hero-cta">
+      <a class="btn gold" href="https://wa.me/447494204460?text=Quero%20meu%20site%20de%20delivery">WhatsApp agora</a>
+      <a class="btn dark" href="mailto:orders@tastypizza.co.uk?subject=Quero%20meu%20site%20de%20delivery&body=Envio%20meu%20card%C3%A1pio%20para%20montagem.">Enviar por e-mail</a>
+    </div>
+    <p style="margin-top:8px">Atendemos em EN / PT / AR.</p>
+  </section>
+</main>
+
+<div class="cta-bar">
+  <a class="btn gold" href="#pricing">Ver preços</a>
+  <a class="btn dark" href="https://wa.me/447494204460?text=Quero%20um%20site%20de%20delivery%20sem%20comiss%C3%A3o">Falar no WhatsApp</a>
+</div>
+
+<footer class="container">
+  <hr class="sep">
+  <div>© <span id="y"></span> Delivery PRO — Matrix Tools • Sem comissão • Cardápio + WhatsApp</div>
+  <div style="margin-top:8px;font-size:12px">Imagens meramente ilustrativas. O cálculo de entrega usa <a href="https://postcodes.io/" target="_blank" rel="noopener">postcodes.io</a>. “Click to Chat” do WhatsApp conforme <a href="https://faq.whatsapp.com/591452966006317" target="_blank" rel="noopener">documentação oficial</a>.</div>
+</footer>
+
+<script>
+// ano
+document.getElementById('y').textContent = new Date().getFullYear();
+// abrir em nova guia com segurança
+document.querySelectorAll('a[target="_blank"]').forEach(a=>{a.rel="noopener";});
+</script>
+</body>
+</html>
